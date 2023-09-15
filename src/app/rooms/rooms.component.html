@@ -1,0 +1,38 @@
+<!-- <h4>Welcome to {{ hotelName }}</h4> -->
+<HotelApp-header></HotelApp-header>
+<HotelApp-header></HotelApp-header>
+<HotelApp-header></HotelApp-header>
+<button (click)="toggle()">Hide Rooms</button>
+<button (click)="toggleTitle()">Change Title</button>
+<div [hidden]="hideRooms">
+  <h4>Number of rooms:</h4>
+  <div>{{ numberOfRooms }}</div>
+  <!-- <div [innerText]="rooms.availableRooms"></div> -->
+  <!-- {{ rooms.availableRooms ?? "No Rooms" }} -->
+  <h4>Available rooms:</h4>
+  <div
+    [ngStyle]="{ color: rooms.availableRooms ? 'steelblue' : 'red' }"
+    [innerText]="rooms.availableRooms"
+  ></div>
+
+  <button (click)="addRoom()">add available Room</button>
+  <button (click)="delRoom()">delete Room</button>
+
+  <!-- {{ roomList | json }} -->
+
+  <div *ngIf="selectedRoom">
+    {{ selectedRoom | json }}
+  </div>
+
+  <div>
+    <button (click)="addRoom2()">Add Room to List</button>
+  </div>
+
+  <div *ngIf="rooms?.availableRooms">
+    <HotelApp-rooms-list
+      [rooms]="roomList"
+      [title]="title"
+      (selectedRoom)="selectRoom($event)"
+    ></HotelApp-rooms-list>
+  </div>
+</div>
