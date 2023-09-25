@@ -7,13 +7,15 @@
   </head>
   <body>
     <h3>Main Component</h3>
+    <div #name></div>
+
     <!-- <HotelApp-rooms></HotelApp-rooms> -->
     <HotelApp-container>
       <HotelApp-rooms></HotelApp-rooms>
       <HotelApp-employee></HotelApp-employee>
       <h1>This is from ng-content</h1>
     </HotelApp-container>
-    <div #name></div>
+    <HotelApp-validation></HotelApp-validation>
 
     <!-- <div [ngSwitch]="role">
       <div *ngSwitchCase="'User'">Welcome User!</div>

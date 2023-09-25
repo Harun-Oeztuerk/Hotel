@@ -1,0 +1,8 @@
+/** Cypress issue in e2e tests with 'sourceMap' and 'typescript@5.0.4'. Remove this file after issue is resolved*/
+
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false
+  }
+}
